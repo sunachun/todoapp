@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_app/add/add_page.dart';
+import 'package:todo_app/calendar.dart';
 import 'package:todo_app/main_model.dart';
 
 void main() async {
@@ -79,9 +80,11 @@ class MainPage extends StatelessWidget {
                     ),
                   ),
                   ListTile(
-                    title: Text("アイテム2"),
-                    trailing: Icon(Icons.settings),
-                  ),
+                      title: Text("アイテム2"),
+                      // ignore: deprecated_member_use
+                      trailing: Icon(
+                        Icons.add,
+                      )),
                 ],
               );
             }),
