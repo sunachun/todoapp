@@ -62,22 +62,19 @@ class MainPage extends StatelessWidget {
                     ),
                   ),
                   ListTile(
-                    title: Text('タスクを追加'),
+                    title: Text("タスクを追加"),
                     // ignore: deprecated_member_use
-                    trailing: RaisedButton.icon(
-                      icon: const Icon(
-                        Icons.tag_faces,
+                    trailing: RaisedButton(
+                      child: Icon(
+                        Icons.settings,
+                        color: Colors.red,
                       ),
-                      label: const Text('タスクを追加'),
-                      onPressed: () async {
-                        //遷移先を記述
-                        await Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => AddPage(model),
-                            fullscreenDialog: true,
-                          ),
-                        );
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AddPage(model),
+                            ));
                       },
                     ),
                   ),
