@@ -39,6 +39,31 @@ class AddPage extends StatelessWidget {
                       await model.add();
                       Navigator.pop(context);
                     }),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Container(
+                      color: Colors.amber,
+                      width: 50,
+                      height: 50,
+                    ),
+                    Container(
+                      color: Colors.blue,
+                      width: 50,
+                      height: 50,
+                    ),
+                    Container(
+                      color: Colors.deepOrange,
+                      width: 50,
+                      height: 50,
+                    ),
+                    Container(
+                      color: Colors.green,
+                      width: 50,
+                      height: 50,
+                    ),
+                  ],
+                )
               ],
             ),
           );

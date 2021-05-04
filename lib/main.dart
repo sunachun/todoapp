@@ -51,6 +51,44 @@ class MainPage extends StatelessWidget {
               }),
             ],
           ),
+          drawer: Drawer(
+            child: Consumer<MainModel>(builder: (context, model, child) {
+              return ListView(
+                children: <Widget>[
+                  DrawerHeader(
+                    child: Text('ヘッダー'),
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                    ),
+                  ),
+                  ListTile(
+                    title: Text('タスクを追加'),
+                    // ignore: deprecated_member_use
+                    trailing: RaisedButton.icon(
+                      icon: const Icon(
+                        Icons.tag_faces,
+                      ),
+                      label: const Text('タスクを追加'),
+                      onPressed: () async {
+                        //遷移先を記述
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AddPage(model),
+                            fullscreenDialog: true,
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  ListTile(
+                    title: Text("アイテム2"),
+                    trailing: Icon(Icons.settings),
+                  ),
+                ],
+              );
+            }),
+          ),
           body: Consumer<MainModel>(builder: (context, model, child) {
             final todoList = model.todoList;
             return ListView(
@@ -80,7 +118,7 @@ class MainPage extends StatelessWidget {
                   ),
                 );
               },
-              child: Icon(Icons.add),
+              child: Icon(Icons.tag_faces),
             );
           })),
     );
